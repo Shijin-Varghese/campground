@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+      <h1 class="text-center">New Campgrounds</h1>
+      <div class="col-6 offset-3">
+        <form action="/campgrounds" method="POST" class="needs-validation" novalidate enctype="multipart/form-data" >
+          <!-- no validate prevent form from validating required inputs i.e.. now we can submit empty form
+            we can use html required instead of bootstrap validation
+           -->
+          <div class="mb-3">
+            <!-- campground[title] mean every title in form will be stored in campground(not in our model) -->
+            <label class="form-label" for="title">TITLE</label>
+            <input class="form-control"type="text" id="title" name="campground[title]" required />
+          </div>
+    
+          <div  class="mb-3">
+            <label class="form-label for="location">LOCATION</label>
+            <input class="form-control" type="text" id="location" name="campground[location]" required/>
+          </div>
+          <div  class="mb-3">
+            <label class="form-label" for="image">Image</label>
+            <input class="form-control" type="file" id="image" name="campground[image]"   multiple required />
+          </div>
+         
+          
+          <!--now we are using input group of bootstrap for price -->
+            <div class="mb-3">
+              <label class="form-label" for="price">Campground Price</label>    
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="price-label">$</span>
+              <input type="text" class="form-control" id="price" placeholder="Price" aria-label="Username" aria-describedby="price-label" name="campground[price]" required>
+            </div>
+          </div>
+            <div  class="mb-3">
+              <label class="form-label for="description">Description</label>
+              <textarea class="form-control" type="text" id="description" name="campground[description]" required >
+            </textarea>
+          </div>
+          <div class="mb-3"><button class="btn btn-success">Add Campground</button></div>
+          
+          <a href="/campgrounds">All Campgrounds</a>
+    
+        </form>
+     
+      </div>
+    </div>

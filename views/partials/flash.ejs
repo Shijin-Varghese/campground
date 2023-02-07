@@ -1,0 +1,14 @@
+<!-- because by default success will be empty array and hence it will show some alert border on top of page so to avoid if(success && success.length) is done  -->
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">   
+<%=success%>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%}%>
+<!-- erroring(can be any name but should match what we gaave in res.local and req.flash ) -->
+<% if(error && error.length) {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">   
+    <%=error%>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <%}%>
